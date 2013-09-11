@@ -32,4 +32,14 @@ We also need to decide on a consistent code style. How do we want the indentatio
 How do we want to comment? I think we should do a comment above all classes and methods describing what they are, 
 what they do, and what the variables are, sort of what we did in Dave's class. For indentations, after every { I 
 tab indent, but if you guys would rather do a space or not at all, we can work it out.
+
+
+
+Update 11/9:
+I'll go ahead and create a main function file. I'll make up names for the functions we're calling, but we can change
+those as needed. I can also do an input verification--I'll go ahead and do the code maker's verification since that's the 
+first one needed. Let me know when I've uploaded it if the format/style for indents and comments is what we want to 
+use for the project. We can change it if we need to, I don't care. 
+
+I should (hopefully) get that up by this weekend, I'm aiming for Sunday at the latest.
  
