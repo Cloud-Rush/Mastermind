@@ -10,6 +10,10 @@ public class Mastermind {
 	    int num = 0;
 	    System.out.println("Enter number of letters for the code:");
 	    num = in.nextInt();
+	    if(num > 26)
+	    {
+	    	System.out.println("You have entered an invalid number of letters try again.");
+	    }
 	} while(num > 26);
 
 	// Ask for number of turns
@@ -39,18 +43,18 @@ public class Mastermind {
 	
 	//calls a verify guess function to check the guess
 	do{
-	    System.out.prntln("Enter your guess:");
+	    System.out.println("Enter your guess:");
 	    string guess = in.next();
 	    guessVerify(guess);
 	} while(win == false || rounds < turns);
       
     }
-    System.out.prntln("End of game.");
+    System.out.println("End of game.");
     if(win == false || rounds > turns){
-	System.out.prntln("You lost. The answer was", pass);
+	System.out.println("You lost. The answer was", pass);
     }
     else{
-	System.prntln("You won!");
+	System.out.println("You won!");
     }
 }
 
