@@ -2,50 +2,24 @@ import java.util.Scanner;
 
 public class Mastermind {
     public static void main(String args[]){
-  
-	// Ask for number of letters in the code
-
-	bool isNumeric = false;
-	do{
-	    int num = 0;
-	    System.out.println("Enter number of letters for the code:");
-	    num = in.nextInt();
-	    if(num > 26)
-	    {
-	    	System.out.println("You have entered an invalid number of letters try again.");
-	    }
-	} while(num > 26);
+  	// calls function to ask how many letters are in the code
+  	int num = NumLetters();
 
 	// Ask for number of turns
-       	do{
-	    int turns = 0;
-	    System.out.println("Enter number of turns:");
-	    turns = in.nextInt();
-	    isNumeric = true;
-	    //get the number
-	    try {
-		Integer.parseInt(turns);
-	    }
-	    // catch bad input
-	    catch(InputMismatchException e) {
-		// isNumeric is false
-		System.out.println("That is not a number.");
-		isNumeric = false;
-	    }
-	} while(isNumeric == false);
+	int turns = NumTurns();
 
 	// get the code and check if the input is correct
 	string pass = readCode(num);
-
+	char password[] = pass.toCharArray;
 	// get the user's guess
 	bool win = false;
-	int turns;
 	
 	//calls a verify guess function to check the guess
 	do{
 	    System.out.println("Enter your guess:");
-	    string guess = in.next();
-	    guessVerify(guess);
+	    string g = in.next();
+	    char guess[] = g.toCharArray;
+	    guessVerify(guess[], password[]);
 	} while(win == false || rounds < turns);
       
     }
@@ -58,32 +32,6 @@ public class Mastermind {
     }
 }
 
-private static String readCode(int num) {
-    Console console = System.console( );
-    bool correct;
-    bool length;
-    String readPassword;
-    do{
-	System.out.println("Enter code:");
-	readPassword = in.next();
-	correct = true;
-	length = true;
-	try {
-	    Integer.parseInt(readPassword);
-	}
-	catch(InputMismatchException e) {
-	    System.out.println("Please enter letters".);
-	    correct = false;
-	}
-	if(length > num){
-	    System.out.println("Enter only",num, "amount of letters.");
-	    length = false;
-	}
-    } while(correct == false && length == false );
-    
-    return (console.readPassword( ));
-    
-  }
 
 
     
