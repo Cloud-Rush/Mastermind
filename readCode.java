@@ -1,27 +1,51 @@
-private static String readCode(int number) {
-    Console console = System.console( );
-    bool correct;
-    bool length;
+import java.util.*;
+import java.util.Scanner;
+
+public class readCode {
+	
+ public static String readCode(int num) {
+	Scanner in = new Scanner(System.in);
+    Boolean correct = false;
+    Boolean length = false;
     String readPassword;
-    int num = number;
+    Boolean letters ;
+    
     do{
 	      System.out.println("Enter code:");
-	      readPassword = in.next();
-      	correct = true;
-    	  length = true;
-	     try {
-	         Integer.parseInt(readPassword);
+	      readPassword = in.nextLine();
+	      int lengthOfPass = readPassword.length();
+	     if (lengthOfPass < num || lengthOfPass > num){
+	    	 System.out.println("please enter a valid number for your code");
+	    	 correct = false;
+	    	 length = false;
+	    	 continue;
+	     }
+	      
+	      letters = isAlpha(readPassword);
+    	if (letters == false){
+    		correct = false;
+    		continue;
     	}
-    	catch(InputMismatchException e) {
-	        System.out.println("Please enter letters".);
-	        correct = false;
+    	else{
+    		letters = true;
+    		correct = true;
     	}
-    	if(length > num){
-	       System.out.println("Enter only",num, "amount of letters.");
-	       length = false;
-	    }
     } while(correct == false && length == false );
     
-    return (console.readPassword( ));
+    return (readPassword);
     
   }
+
+public static boolean isAlpha(String name) {
+    char[] chars = name.toCharArray();
+
+    for (char c : chars) {
+        if(!Character.isLetter(c)) {
+            return false;
+        }
+    }
+
+    return true;
+}
+}
+
