@@ -1,39 +1,64 @@
 import java.util.Scanner;
 
+
+
+
 public class Mastermind {
-    public static void main(String args[]){
+	public static void main(String args[]){
+    Boolean correct = false;
+   	// Ask for number of turns
+   	int turns = NumTurns.NumTurns();
+   	int rounds = 0;
   	// calls function to ask how many letters are in the code
-  	int num = NumLetters();
-
-	// Ask for number of turns
-	int turns = NumTurns();
-
-	// get the code and check if the input is correct
-	string pass = readCode(num);
-	char password[] = pass.toCharArray;
-	// get the user's guess
-	bool win = false;
+  	int num = NumLetters.NumLetters();
+  	Scanner in = new Scanner(System.in);
+  	Boolean guessCorrect = true;
+  	
 	
+	// get the code and check if the input is correct
+	String pass = readCode.readCode(num);
+	char password[] = pass.toCharArray();
+	
+	// get the user's guess
+	Boolean win = false;
+	
+	
+	
+	System.out.println("code:"+ pass);
+
 	//calls a verify guess function to check the guess
-	do{
+	while(correct == false && rounds < turns){
+		
+	    String pass1 = new String (password);
+	    System.out.println("pass1 here:  "+ pass1);
+	    
 	    System.out.println("Enter your guess:");
-	    string g = in.next();
+	    String g = in.next();
 	    g.toUpperCase();
-	    LetterCheck(num, g);
-	    char guess[] = g.toCharArray;
-	    guessVarify(guess[], password[]);
-	} while(win == false || rounds < turns);
+	    guessCorrect = LetterCheck.LetterCheck(num, g);
+	    if(guessCorrect == false){
+	    	continue;
+	    }
+	    char guess[] = g.toCharArray();
+	    correct = guessVarify.guessVarify(guess, password);
+	    if(correct==true){
+	    	break;
+	    }
+	    System.out.println("correct entered :" + correct);
+	    rounds ++;
+	  
+	} 
       
-    }
+    
     System.out.println("End of game.");
-    if(win == false || rounds > turns){
-	System.out.println("You lost. The answer was", pass);
+    if(rounds == turns)
+    {
+    String pass2 = new String (password);
+    
+	System.out.println("You lost. The answer was"+ pass2);
     }
-    else{
+    else if(correct == true && rounds <= turns){
 	System.out.println("You won!");
     }
 }
-
-
-
-    
+}
