@@ -1,0 +1,29 @@
+alright guys....here is the deal. the major faults are ironed out. now, for the final piece of the puzzle.
+i'm tired of looking at this for the last 8 hours so its up to you guys.
+
+in the mastermind file we initialize the PASSWORD. this is then put into the while loop.
+then the password is sent into the varifyguess function. within the varifyguess
+function I change a local copy of the password. so basically password is copied into char array A.
+I then modify the local copy A. this is where the magic gets funky, even though I have created 2 seperate instances
+where the password is copied from its original source, the initial PASSWORD array gets changed as well!
+this is no good. I need the password to be sent into varifyguess as the original eachtime, not the modified version that 
+I make.
+
+aka this is what happens
+
+password is abcd
+sent into varifyguess.
+send to array A.
+change array A from abcd to a..d
+exit varifyguess.
+boom, original password is now a..d. 
+
+I need it to stay abcd each time its sent in!
+
+
+
+
+the rest, just need cleaning up, and obvious de-bug println's taken out....
+
+
+good luck ;)
