@@ -19,7 +19,7 @@ public class Mastermind {
 	    System.out.println("Enter your guess:");
 	    string g = in.next();
 	    char guess[] = g.toCharArray;
-	    guessVerify(guess[], password[]);
+	    guessVarify(guess[], password[]);
 	} while(win == false || rounds < turns);
       
     }
