@@ -3,38 +3,30 @@ import java.util.*;
 
 public class LetterCheck {
 
-    public static void inRange(int num, String guess){
-        char [] alphabet = new char [] {'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'}
-        boolean valid=true;
-        int checker=0;
-        String guess2;
-        Scanner in = new Scanner(System.in);
-        for(int i=0;i<num;i++){
-          for(int count=0;count<num;count++){
-              if(guess.charAt(i)==alphabet[count]){
-                  checker=checker+1;
-              }
-          }
+	public static Boolean LetterCheck(int num, String g) {
+        g= g.toUpperCase();
+        char guess2[] = g.toCharArray();
+        int lengthGuess = g.length();
+        
+        
+        
+        //check if guess is all letters
+        for (int temp = 0; temp < num; temp++){
+        if (guess2[temp] < 65 || guess2[temp] > 90)
+        	{
+        		System.out.println("please enter a guess of all letters!");
+        		return false;
+        	}
         }
-        if(checker!=num){
-          valid=false;
+        
+        
+        //check length of guess vs length of password
+        if(lengthGuess != num){
+        	System.out.println("please enter a guess of the same length as the password!");
+        	return false;
         }
-        while(valid==false){
-          checker=0;
-          System.out.println("You have entered an invalid guess.");
-          System.out.println("Please enter a different guess.");
-          guess2=in.Next();
-          guess2.toUpper();
-          for(int i=0;i<num;i++){
-            for(int count=0;count<num;count++){
-                if(guess2.charAt(i)==alphabet[count]){
-                    checker=checker+1;
-                }
-            }
-          }
-          if(checker!=num){
-            valid=false;
-          }
-          }
-}
-}
+        
+        return true;
+       
+        }
+	}
