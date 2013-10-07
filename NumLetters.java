@@ -1,31 +1,37 @@
-import java.util.Scanner;
-
-public class int NumLetters() {
+import java.util.*;
+public class NumLetters {
+	
+	public static Integer NumLetters(){
   	// Ask for number of letters in the code
-
-    bool isNumeric = false;
-    do{
-    	
-    	do{
-    		int num = 0;
-    		System.out.println("Enter number of letters for the code:");
-    		num = in.nextInt();
-    		if(num > 26)
-    		{
-    			System.out.println("You have entered an invalid number of letters try again.");
-    		}
-    	} while(num > 26);
-    
+	Scanner in = new Scanner(System.in);
+    Boolean isNumeric = false;
+    Boolean letters = false;
+    Boolean temp = false;
+    String t = ""; 
+    Integer num=0;
+    while (isNumeric == false){
+    	isNumeric = true;
+    	System.out.println("Enter number of letters:");
     	try{
-    		Integer.parseInt(num);
+    		t = in.next();
+    		Integer.parseInt(t);
+    		
     	}
-    
-    	catch(InputMismatchException e){
-    		System.out.println("That is not a number.");
+    	catch(Exception e){
     		isNumeric = false;
     	}
-    }while(isNumeric == false)
-    
+    	if(isNumeric == true){
+    		num = Integer.parseInt(t);
+    		if (num < 1 || num > 26){
+    			System.out.println("You have entered an incorrect number of letters.");
+    			isNumeric = false;
+    			continue;
+    		}
+    	}
+
+    	
+    }
     return num;
+	
 }
-    
+}
