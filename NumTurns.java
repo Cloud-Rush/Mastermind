@@ -1,30 +1,37 @@
-import java.util.Scanner;
+import java.util.*;
+public class NumTurns {
+	
+	public static Integer NumTurns(){
+	  	// Ask for number of letters in the code
+		Scanner in = new Scanner(System.in);
+	    Boolean isNumeric = false;
+	    String t = ""; 
+	    Integer num=0;
+	    while (isNumeric == false){
+	    	isNumeric = true;
+	    	System.out.println("Enter number of turns:");
+	    	try{
+	    		t = in.next();
+	    		Integer.parseInt(t);
+	    		
+	    	}
+	    	catch(Exception e){
+	    		isNumeric = false;
+	    	}
+	    	if(isNumeric == true){
+	    		num = Integer.parseInt(t);
+	    		if (num < 1){
+	    			System.out.println("You have entered an incorrect number of turns.");
+	    			isNumeric = false;
+	    			continue;
+	    		}
+	    	}
 
-public class int NumTurns() {
-  	// Ask for number of letters in the code
+	    	
+	    }
+	    return num;
+		
+	}
 
-    bool isNumeric = false;
-    do{
-    	
-    		int t = 0;
-    		System.out.println("Enter number of turns:");
-    		t = in.nextInt();
-    		if(t <1)
-    		{
-    			System.out.println("You must have at least one turn.");
-    		}
-    	} while(t < 1);
-    
-    	try{
-    		Integer.parseInt(t);
-    	}
-    
-    	catch(InputMismatchException e){
-    		System.out.println("That is not a number.");
-    		isNumeric = false;
-    	}
-    	
-    }while(isNumeric == false)
-    
-    return t;
+
 }
