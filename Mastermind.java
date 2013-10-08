@@ -1,3 +1,4 @@
+package mastermind;
 import java.util.Scanner;
 import LetterCheck.java;
 import NumLetters.java;
