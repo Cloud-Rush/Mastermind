@@ -43,10 +43,7 @@ static Boolean guessVarify(char[] guess, char[] pass)
 	}
 	
 	
-	System.out.println("exactright: " + exactright);
-	System.out.println("passlength: " + passLength);
 	if (exactright == passLength){
-		System.out.println("you win here!");
 		return true;
 	}
 	System.out.printf("your code holds %d characters exactly in the right place.\n", exactright);
