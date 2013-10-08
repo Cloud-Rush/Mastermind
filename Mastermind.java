@@ -1,5 +1,9 @@
 import java.util.Scanner;
-
+import LetterCheck.java;
+import NumLetters.java;
+import NumTurns.java;
+import guessVarify.java;
+import readCode.java;
 
 
 
