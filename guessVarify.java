@@ -5,8 +5,12 @@ static Boolean guessVarify(char[] guess, char[] pass)
 {
 	int guessLength = guess.length;
 	int passLength = pass.length;
-	char[] a = guess;
-	char [] b = pass;
+	char[] guessHolder = new char[4];
+	char [] passHolder = new char[4];
+	for(int i=0;i<4;i++){
+		guessHolder[i] = guess[i];
+		passHolder[i] = pass[i];
+	}
 	int exactright=0;
 	int right=0;
 	String guess2 = new String (guess);
@@ -19,10 +23,10 @@ static Boolean guessVarify(char[] guess, char[] pass)
 	for (int i=0; i < passLength; i++){
 		
 		//see if i letter in pass is exactly right with i letter in guess
-		if (b[i] == (a[i])){
+		if (passHolder[i] == (guessHolder[i])){
 			exactright = exactright + 1;
-			b[i] = '.';
-			a[i] = ',';
+			passHolder[i] = '.';
+			guessHolder[i] = ',';
 		}
 		
 	}
@@ -32,10 +36,10 @@ static Boolean guessVarify(char[] guess, char[] pass)
 		
 		//see if i letter in pass is found somewhere in guess
 		for (int x = 0; x < passLength; x++){
-			if (b[i] == a[x]) {
+			if (passHolder[i] == guessHolder[x]) {
 				right = right +1;
-				b[i] = '.';
-				a[x] = ',';
+				passHolder[i] = '.';
+				guessHolder[x] = ',';
 				break;
 			}
 		}
