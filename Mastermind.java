@@ -30,7 +30,6 @@ public class Mastermind {
 	while(correct == false && rounds < turns){
 		
 	    String pass1 = new String (password);
-	    System.out.println("pass1 here:  "+ pass1);
 	    
 	    System.out.println("Enter your guess:");
 	    String g = in.next();
@@ -44,7 +43,6 @@ public class Mastermind {
 	    if(correct==true){
 	    	break;
 	    }
-	    System.out.println("correct entered :" + correct);
 	    rounds ++;
 	  
 	} 
