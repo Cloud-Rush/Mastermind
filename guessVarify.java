@@ -1,3 +1,4 @@
+package mastermind;
 public class guessVarify{
 
 
