@@ -1,3 +1,4 @@
+package mastermind;
 import java.util.*;
 public class NumTurns {
 	
