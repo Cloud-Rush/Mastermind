@@ -1,3 +1,4 @@
+package mastermind;
 public class isAlpha{
 public static boolean isAlpha(String name) {
     char[] chars = name.toCharArray();
