@@ -27,10 +27,6 @@ public class Mastermind {
 	// get the user's guess
 	Boolean win = false;
 	
-	
-	
-	System.out.println("code:"+ pass);
-
 	//calls a verify guess function to check the guess
 	while(correct == false && rounds < turns){
 		
@@ -58,7 +54,7 @@ public class Mastermind {
     {
     String pass2 = new String (password);
     
-	System.out.println("You lost. The answer was"+ pass2);
+	System.out.println("You lost. The answer was "+ pass2);
     }
     else if(correct == true && rounds <= turns){
 	System.out.println("You won!");
