@@ -21,8 +21,7 @@ static Boolean guessVarify(char[] guess, char[] pass)
 
         for (int i=0; i < passLength; i++){
 
-                //see if i letter in pass is exactly right with i letter in gues
-s
+                //see if i letter in pass is exactly right with i letter in guess
                 if (b[i] == (a[i])){
                         exactright = exactright + 1;
                         b[i] = '.';
