@@ -1,3 +1,4 @@
+package mastermind;
 import java.util.*;
 import java.util.Scanner;
 import java.io.Console;
