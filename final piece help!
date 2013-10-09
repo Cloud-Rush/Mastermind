@@ -30,3 +30,7 @@ good luck ;)
 
 Riley: alright so i added the classes to be all part of the same package because you can't import them if they aren't a package
 and i'm pretty sure i fixed up the guess varify code but i'm trying to run it and having trouble...:( anyone else have any luck?
+
+Annika:
+FINISHED. Fixed all the last bugs and added in the masking for the console so the passcode doesn't appear
+when entering it the first time. 
