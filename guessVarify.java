@@ -1,13 +1,6 @@
-package mastermind;
 public class guessVarify{
 
-
-static Boolean guessVarify(char[] guess, char[] pass)
-{
-public class guessVarify{
-
-
-static Boolean guessVarify(char[] guess, char[] pass)
+public static Boolean guessVarify(char[] guess, char[] pass)
 {
         int guessLength = guess.length;
         int passLength = pass.length;
@@ -36,7 +29,7 @@ static Boolean guessVarify(char[] guess, char[] pass)
 
                 //see if r letter in pass is found somewhere in guess
                 for (int x = 0; x < passLength; x++){
-                        if (b[r] == a[x]) {
+                        if (b[r] == a[x] && b[r] != '.' && a[x] !=',') {
                                 right = right +1;
                                 b[r] = '.';
                                 a[x] = ',';
